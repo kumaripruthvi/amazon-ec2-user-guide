@@ -1,0 +1,63 @@
+ visudo
+
+ansadmin       ALL=(ALL)       NOPASSWD: ALL
+
+ vi /etc/ssh/sshd_config
+
+systemctl restart sshd
+vi /etc/ssh/sshd_config
+PasswordAuthentication yes
+ systemctl restart sshd
+ll -a
+
+ssh keygen
+ ssh-copy-id 172.31.27.136
+
+Ansible set u process in user only
+ cat /etc/os-release
+ssh 172.31.27.136
+sudo amazon-linux-extras install ansible2
+ cd /etc/ansible/
+ll
+vi hosts 
+su - pruthvi
+amsible all -m ping
+
+cat /etc/ansible/hosts
+
+
+172.31.21.18
+172.31.30.11
+172.31.20.186
+
+ansible all -m yum -a "name=git  state=present" -b  in master server
+git --version in node we  can see
+
+[ansadmin@ip-172-31-27-174 ~]$ sudo vi /etc/ansible/hosts
+
+[web server]
+172.31.21.18
+172.31.30.11
+
+[db server]
+172.31.20.186
+172.31.30.11
+
+[app server]
+
+
+172.31.20.186
+172.31.21.18
+only fetch  file 
+
+[ansadmin@ip-172-31-27-174 log]$ ansible all -m fetch -a "src=/var/log/messages dest=." -b
+with message 
+ansadmin@ip-172-31-27-174 ~]$ ansible all -m fetch -a "src=/var/log/messages dest=messages_{{inventory_hostname}} flat=yes" -b
+
+
+
+[ansadmin@ip-172-31-21-18 ~]$ ansible 172.31.21.18 -m yum -a "name=wget state=present" -b -k -u pruthvi
+
+
+
+
